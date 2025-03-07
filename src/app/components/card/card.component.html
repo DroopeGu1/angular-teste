@@ -6,8 +6,15 @@
     <p>Empresa: R${{ client.companyValuation }}</p>
   </div>
 
+  @if (showActions) {
   <div class="buttons-container">
-    <img src="assets/svg/plus-solid.svg" alt="Icon" width="17" height="17" />
+    <img
+      src="assets/svg/plus-solid.svg"
+      alt="Icon"
+      width="17"
+      height="17"
+      (click)="onSelect(client)"
+    />
     <img
       src="assets/svg/pen-solid.svg"
       alt="Icon"
@@ -23,4 +30,5 @@
       (click)="onDelete(client)"
     />
   </div>
+  }
 </div>

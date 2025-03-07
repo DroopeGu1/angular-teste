@@ -1,0 +1,12 @@
+<main>
+  <p>Clientes selecionados:</p>
+  <div class="grid-users">
+    @for (item of clientsSelect; track item.id) {
+    <app-card [client]="item" />
+    }
+  </div>
+
+  <button class="clean-clients" (click)="clearClientsSelect()">
+    Limpar clientes
+  </button>
+</main>

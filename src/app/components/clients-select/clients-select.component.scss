@@ -1,0 +1,35 @@
+@media screen and (min-width: 759px) {
+  main {
+    width: 75%;
+    margin: auto;
+
+    .grid-users {
+      display: flex !important;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 758px) {
+  main {
+    .grid-users {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+}
+
+p {
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.clean-clients {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 2px solid #ec6724;
+  width: 100%;
+  font-weight: 700;
+  color: #ec6724;
+  padding: 12px 0px;
+}

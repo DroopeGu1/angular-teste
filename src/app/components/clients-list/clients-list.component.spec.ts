@@ -8,6 +8,7 @@ import { ApiService } from '../../service/api.service';
 import { CardComponent } from '../card/card.component';
 import { ClientModalComponent } from '../client-modal/client-modal.component';
 import { ClientsListComponent } from './clients-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('ClientsListComponent', () => {
   let component: ClientsListComponent;
@@ -43,7 +44,12 @@ describe('ClientsListComponent', () => {
     dialogMock = jasmine.createSpyObj('MatDialog', ['open', 'closeAll']);
 
     await TestBed.configureTestingModule({
-      imports: [ClientsListComponent, MatSelectModule, CardComponent],
+      imports: [
+        ClientsListComponent,
+        MatSelectModule,
+        CardComponent,
+        MatSnackBarModule,
+      ],
       providers: [
         { provide: ApiService, useValue: apiServiceMock },
         { provide: MatDialog, useValue: dialogMock },

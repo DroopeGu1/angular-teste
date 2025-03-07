@@ -18,7 +18,9 @@
   <div class="grid-users">
     @for (item of users().clients; track item.id) {
     <app-card
+      [showActions]="true"
       [client]="item"
+      (seletClient)="handleSelect($event)"
       (editClient)="handleEdit($event)"
       (deleteClient)="handleDelete($event)"
     />
