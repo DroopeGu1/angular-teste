@@ -1,0 +1,40 @@
+<main>
+  <div class="header">
+    <p>
+      <b>{{ users().clients.length || 0 }}</b> clientes encontrados:
+    </p>
+    <div class="filter-page">
+      <p>Clientes por página:</p>
+      <mat-select
+        (selectionChange)="onSelectionChange($event.value)"
+        [value]="selectedValue()"
+      >
+        @for (option of options; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-select>
+    </div>
+  </div>
+  <div class="grid-users">
+    @for (item of users().clients; track item.id) {
+    <app-card
+      [client]="item"
+      (editClient)="handleEdit($event)"
+      (deleteClient)="handleDelete($event)"
+    />
+    }
+  </div>
+
+  <button class="create-client" (click)="onClick()">Criar cliente</button>
+
+  <div class="pagination">
+    @for (page of pages; track page) {
+    <span
+      (click)="setPage(page)"
+      [class.active]="page === this.users().currentPage"
+    >
+      {{ page }}
+    </span>
+    }
+  </div>
+</main>

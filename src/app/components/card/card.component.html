@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="container">
+    <h4 class="title">{{ client.name }}</h4>
+
+    <p>Salário: R${{ client.salary }}</p>
+    <p>Empresa: R${{ client.companyValuation }}</p>
+  </div>
+
+  <div class="buttons-container">
+    <img src="assets/svg/plus-solid.svg" alt="Icon" width="17" height="17" />
+    <img
+      src="assets/svg/pen-solid.svg"
+      alt="Icon"
+      width="17"
+      height="17"
+      (click)="onEdit(client)"
+    />
+    <img
+      src="assets/svg/trash-solid.svg"
+      alt="Icon"
+      width="17"
+      height="17"
+      (click)="onDelete(client)"
+    />
+  </div>
+</div>

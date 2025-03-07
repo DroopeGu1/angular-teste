@@ -1,0 +1,28 @@
+<header>
+  <div class="container">
+    <div class="container-logo">
+      <img src="assets/svg/bars-solid.svg" alt="Icon" width="24" height="24" />
+      <img src="assets/img/teddy-logo.png" alt="Logo" width="100" height="50" />
+    </div>
+
+    <div class="links">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        >Clientes</a
+      >
+      <a
+        routerLink="/clients-select"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        >Clientes Selecionados</a
+      >
+      <a routerLink="/login">Sair</a>
+    </div>
+
+    <p class="user">
+      Ola,<b>{{ name }}</b>
+    </p>
+  </div>
+</header>

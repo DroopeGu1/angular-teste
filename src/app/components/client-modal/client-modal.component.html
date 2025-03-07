@@ -1,0 +1,41 @@
+<h4 mat-dialog-title>Criar cliente:</h4>
+<mat-dialog-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      placeholder="Digite o seu nome:"
+    />
+
+    @if (form.get('name')?.invalid && form.get('name')?.touched) {
+    <span>Digite um nome para prosseguir</span>
+    }
+
+    <input
+      id="salary"
+      type="number"
+      formControlName="salary"
+      placeholder="Digite o salário:"
+    />
+
+    @if (form.get('salary')?.invalid && form.get('salary')?.touched) {
+    <span>Digite um salário para prosseguir</span>
+    }
+
+    <input
+      id="companyValuation"
+      type="number"
+      formControlName="companyValuation"
+      placeholder="Digite o valor da empresa:"
+    />
+
+    @if (form.get('companyValuation')?.invalid &&
+    form.get('companyValuation')?.touched) {
+    <span>Digite um valor da empresa para prosseguir</span>
+    }
+    <button type="submit" class="create-button" [disabled]="form.invalid">
+      {{ this.data.item ? "Editar Cliente" : "Criar Cliente" }}
+    </button>
+  </form>
+</mat-dialog-content>
